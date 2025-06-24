@@ -30,17 +30,27 @@ app.post('/api/characters', async (req, res) => {
     }
 })
 
-app.patch('/api/characters/:id', async (req, res) =>{
+app.patch('/api/characters/:id', async (req, res) => {
     try {
         console.log(req.body)
-        const query = {_id: req.params.id}
-        const update = {$set: req.body}
+        const query = { _id: req.params.id }
+        const update = { $set: req.body }
         const updatedChar = await Characters.updateOne(query, update)
 
         res.send(updatedChar)
+    } catch (error) {
+        res.status(400).json({ errror: error.message })
+    }
+})
 
-    } catch (error){
-        res.status(400).json({errror: error.message})
+app.delete('/api/characters/:id', async (req, res) => {
+    try {
+        const id = req.params.id
+        console.log(req.body)
+        const deletedChar = await Characters.findByIdAndDelete(id)
+        res.send(deletedChar)
+    } catch (error) {
+        res.status(400).json({ error: error.message })
     }
 })
 
