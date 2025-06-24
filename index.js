@@ -30,6 +30,20 @@ app.post('/api/characters', async (req, res) => {
     }
 })
 
+app.patch('/api/characters/:id', async (req, res) =>{
+    try {
+        console.log(req.body)
+        const query = {_id: req.params.id}
+        const update = {$set: req.body}
+        const updatedChar = await Characters.updateOne(query, update)
+
+        res.send(updatedChar)
+
+    } catch (error){
+        res.status(400).json({errror: error.message})
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`)
     connectDB()
