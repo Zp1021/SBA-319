@@ -4,8 +4,7 @@ For this project the focus was on using an express server to create rest api's t
 There are routes that exist for each of the respective collections and their CRUD operations.
 
 
-1. 
-GET /
+1.  GET /
     GET /api/characters
     GET /api/items
     GET /api/networks
@@ -17,7 +16,7 @@ Get allows users to retrieve data from the database
     POST /api/items
     POST /api/networks
 
-Post allows users to write data to the database. Some example data is as follows
+Post allows users to write data to the database. Some example data is as follows (Use only the curly brackets and their contents when testing)
 
 Characters: 
 {
@@ -28,15 +27,15 @@ Characters:
 
 Items: 
 {
-  "armor": "Chainmail",
-  "weapon": "Great Sword",
-  "potions": "Health"
+    "armor": "Chainmail",
+    "weapon": "Great Sword",
+    "potions": "Health"
 }
 
 Networks:
 {
-  "netName": "Cartoon Network",
-  "netRating": "8.5"
+    "netName": "Cartoon Network",
+    "netRating": "8.5"
 }
 
 Remember: Once you post data to the database the browser should show a visual representation of that data with the respective links provided
