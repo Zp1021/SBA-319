@@ -7,7 +7,7 @@ const itemSchema = new Schema({
         type: String,
         required: true,
     },
-    sword: {
+    weapon: {
         type: String,
         required: true,
         
@@ -17,6 +17,10 @@ const itemSchema = new Schema({
         required: true,
     }
 })
+
+itemSchema.index({armor: 1});
+itemSchema.index({weapon: 1});
+itemSchema.index({potions: 1});
 
 let Items = mongoose.model("Items", itemSchema)
 export default Items
