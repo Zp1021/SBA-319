@@ -15,7 +15,12 @@ app.use(express.json())
 // Starting page
 app.get('/', (req, res) => {
     res.send(`<h1>Hello World!
-    <br>Welcome to SBA 319!</h1>`)
+    <br>Welcome to SBA 319!</h1>
+    <h2>In order to check the data you created check 
+    <br>the following links:<h2>
+    <h3><a href='/api/characters'>Characters</a></h3>
+    <h3><a href='/api/items'>Items</a></h3>
+    <h3><a href='/api/networks'>Networks</a></h3>`)
 })
 
 // List of Characters
@@ -116,7 +121,16 @@ app.delete('/api/characters/:id', async (req, res) => {
     }
 })
 
-
+app.delete('/api/items/:id', async (req, res) => {
+    try {
+        const id = req.params.id
+        console.log(req.body)
+        const deletedItem= await Items.findByIdAndDelete(id)
+        res.send(deletedItem)
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+})
 
 app.delete('/api/networks/:id', async (req, res) => {
     try {
