@@ -41,6 +41,7 @@ app.get('/api/networks', async (req, res) => {
     res.json(networks)
 })
 
+// Post route for Characters
 app.post('/api/characters', async (req, res) => {
     try {
         console.log(req.body)
@@ -51,6 +52,7 @@ app.post('/api/characters', async (req, res) => {
     }
 })
 
+// Post route for Items
 app.post('/api/items', async (req, res) => {
     try {
         console.log(req.body)
@@ -61,6 +63,7 @@ app.post('/api/items', async (req, res) => {
     }
 })
 
+// Post route for Networks
 app.post('/api/networks', async (req, res) => {
     try {
         console.log(req.body)
@@ -71,6 +74,7 @@ app.post('/api/networks', async (req, res) => {
     }
 })
 
+// Patch route for Characters
 app.patch('/api/characters/:id', async (req, res) => {
     try {
         console.log(req.body)
@@ -84,6 +88,7 @@ app.patch('/api/characters/:id', async (req, res) => {
     }
 })
 
+// Patch route for Items
 app.patch('/api/items/:id', async (req, res) => {
     try {
         console.log(req.body)
@@ -97,6 +102,7 @@ app.patch('/api/items/:id', async (req, res) => {
     }
 })
 
+// Patch route for Networks
 app.patch('/api/networks/:id', async (req, res) => {
     try {
         console.log(req.body)
@@ -110,6 +116,7 @@ app.patch('/api/networks/:id', async (req, res) => {
     }
 })
 
+// Delete route for Characters
 app.delete('/api/characters/:id', async (req, res) => {
     try {
         const id = req.params.id
@@ -121,6 +128,7 @@ app.delete('/api/characters/:id', async (req, res) => {
     }
 })
 
+// Delete route for Items
 app.delete('/api/items/:id', async (req, res) => {
     try {
         const id = req.params.id
@@ -132,6 +140,7 @@ app.delete('/api/items/:id', async (req, res) => {
     }
 })
 
+// Delete route for Networks
 app.delete('/api/networks/:id', async (req, res) => {
     try {
         const id = req.params.id
@@ -143,6 +152,7 @@ app.delete('/api/networks/:id', async (req, res) => {
     }
 })
 
+// Server listening on PORT number
 app.listen(PORT, () => {
     console.log(`Listening on port: ${PORT}`)
     connectDB()
